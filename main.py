@@ -1,8 +1,14 @@
+import sys
 from stats import(
    get_word_count, 
    get_character_frequency,
    get_sorted_char_dict,
 )
+if len(sys.argv) != 2:
+  print("Usage: python3 main.py <path_to_book>")
+  sys.exit(1)
+else:
+  book_path = sys.argv[1]
 
 def main(book_path):
   text = get_book_text(book_path)
@@ -45,4 +51,4 @@ def print_report(book_path, num_words, sorted_char_list):
   print("============= END ===============")
 
 
-main("books/frankenstein.txt")
+main(book_path)
